@@ -247,3 +247,34 @@
   font-size: var(--font-sm);
   color: var(--color-text);
 }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .system-health-badge {
+  background-color: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+[data-theme="dark"] .role-student {
+  background-color: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="dark"] .role-alumni {
+  background-color: rgba(139, 92, 246, 0.18);
+  color: #c4b5fd;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="dark"] .role-admin {
+  background-color: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+[data-theme="dark"] .admin-filter-pill:hover:not(.active) {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-main);
+}
+

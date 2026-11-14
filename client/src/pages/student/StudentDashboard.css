@@ -247,3 +247,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .check-item.done {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+

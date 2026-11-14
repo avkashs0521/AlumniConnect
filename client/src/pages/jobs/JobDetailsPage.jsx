@@ -9,13 +9,6 @@ import Loading from '../../components/common/Loading';
 import ErrorAlert from '../../components/common/ErrorAlert';
 import './Jobs.css';
 
-function getReferralStatusStyle(status) {
-  if (status === 'ACCEPTED') return { backgroundColor: '#dcfce7', color: '#166534' };
-  if (status === 'REJECTED') return { backgroundColor: '#f1f5f9', color: '#475569' };
-  if (status === 'REVIEWED') return { backgroundColor: '#e0f2fe', color: '#0369a1' };
-  return { backgroundColor: '#fef3c7', color: '#92400e' };
-}
-
 export default function JobDetailsPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -401,8 +394,8 @@ export default function JobDetailsPage() {
                         Referral Request Submitted
                       </div>
                       <div
+                        className={`pill-${(existingReferralStatus || 'PENDING').toLowerCase()}`}
                         style={{
-                          ...getReferralStatusStyle(existingReferralStatus),
                           display: 'inline-block',
                           padding: '0.25rem 0.75rem',
                           borderRadius: 'var(--radius-full)',

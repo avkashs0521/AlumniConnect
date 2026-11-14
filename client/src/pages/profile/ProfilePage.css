@@ -377,3 +377,21 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .profile-success-banner {
+  background-color: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+[data-theme="dark"] .verified-check {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+[data-theme="dark"] .career-goals-box {
+  background-color: rgba(16, 185, 129, 0.08);
+  border-left-color: #10b981;
+}
+

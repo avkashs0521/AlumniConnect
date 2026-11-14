@@ -36,3 +36,15 @@
 .error-alert-actions {
   margin-top: var(--space-2);
 }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .error-alert {
+  background-color: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .error-alert-message {
+  color: #f87171;
+}
+

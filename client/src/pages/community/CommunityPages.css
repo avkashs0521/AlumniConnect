@@ -197,3 +197,22 @@
     justify-content: center;
   }
 }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .community-notice {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+[data-theme="dark"] .community-field select,
+[data-theme="dark"] .community-field input,
+[data-theme="dark"] .community-field textarea {
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .community-empty {
+  background: var(--color-bg-card);
+}
+
