@@ -113,7 +113,19 @@
   }
 }
 
-/* Mobile Toggle */
+/* Mobile Controls */
+.navbar-mobile-controls {
+  display: none;
+}
+
+.navbar-theme-toggle-desktop {
+  display: inline-flex;
+}
+
+.navbar-theme-toggle-mobile {
+  display: none;
+}
+
 .navbar-toggle {
   display: none;
   background: none;
@@ -130,8 +142,24 @@
 
 /* Mobile Responsive Menu */
 @media (max-width: 900px) {
+  .navbar-mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .navbar-theme-toggle-mobile {
+    display: inline-flex;
+  }
+
+  .navbar-theme-toggle-desktop {
+    display: none;
+  }
+
   .navbar-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .navbar-menu {

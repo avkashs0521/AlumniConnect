@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
+import ThemeToggle from '../common/ThemeToggle';
 import useAuth from '../../hooks/useAuth';
 import NotificationBell from './NotificationBell';
 import './Navbar.css';
@@ -27,21 +28,24 @@ export default function Navbar() {
           <span>AlumniConnect</span>
         </Link>
 
-        <button
-          type="button"
-          className="navbar-toggle"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle navigation menu"
-          aria-expanded={mobileMenuOpen}
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {mobileMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+        <div className="navbar-mobile-controls">
+          <ThemeToggle className="navbar-theme-toggle-mobile" />
+          <button
+            type="button"
+            className="navbar-toggle"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
 
         <div className={`navbar-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <nav>
@@ -87,6 +91,7 @@ export default function Navbar() {
           </nav>
 
           <div className="navbar-actions">
+            <ThemeToggle className="navbar-theme-toggle-desktop" />
             {isAuthenticated ? (
               <div className="navbar-auth-user">
                 <NotificationBell />

@@ -1,0 +1,66 @@
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-card);
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--color-bg-subtle);
+  border-color: var(--color-border-hover);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.theme-toggle-svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.theme-icon-sun {
+  color: #f59e0b; /* Amber 500 for sun warmth in dark mode */
+}
+
+.theme-toggle-btn:hover .theme-icon-sun {
+  transform: rotate(45deg);
+  color: #fbbf24;
+}
+
+.theme-icon-moon {
+  color: var(--color-text-muted);
+}
+
+.theme-toggle-btn:hover .theme-icon-moon {
+  transform: rotate(-15deg);
+  color: var(--color-primary);
+}
+
+.theme-toggle-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+}
