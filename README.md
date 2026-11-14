@@ -21,7 +21,7 @@ AlumniConnect is a full-stack university engagement platform that bridges the ga
 2. [Technology Stack](#-technology-stack)
 3. [System Architecture](#-system-architecture)
 4. [Implemented Feature Modules](#-implemented-feature-modules)
-5. [Responsive Design System](#-responsive-design-system)
+5. [Responsive Design & Dark Mode System](#-responsive-design--dark-mode-system)
 6. [Repository & Directory Structure](#-repository--directory-structure)
 7. [Database Architecture & Data Models](#-database-architecture--data-models)
 8. [Installation & Setup Guide](#-installation--setup-guide)
@@ -187,7 +187,9 @@ flowchart TD
 
 ---
 
-## 📱 Responsive Design System
+## 📱 Responsive Design & Dark Mode System
+
+### Responsive Viewports
 
 The platform features an enterprise responsive design system defined through CSS design tokens (`tokens.css`, `global.css`) supporting screens from small mobile devices (320px) up to ultra-wide desktop monitors:
 
@@ -196,6 +198,16 @@ The platform features an enterprise responsive design system defined through CSS
 | **Mobile ($\le 640\text{px}$)** | Smartphones (iPhone, Pixel, Galaxy) | Single-column stacking, touch-first inputs, full-width action buttons, bottom-sheet modal drawers, and horizontally swipeable tab bars (`-webkit-overflow-scrolling: touch`). |
 | **Tablet ($641\text{px} - 900\text{px}$)** | iPad, Android tablets | Adaptive 2-column grids. Dashboard sidebar automatically converts into an app-style horizontal pill navigation bar to maximize vertical content space. |
 | **Desktop ($> 900\text{px}$)** | Laptops and widescreen monitors | Full 260px fixed vertical sidebar, multi-column metric grids, side-by-side job detail panes, and responsive table views. |
+
+### 🌓 Complete Dark Mode Engine
+
+AlumniConnect includes a full-fidelity dark mode system implemented with zero external runtime UI dependencies:
+
+- **Semantic CSS Token Mapping:** Defined under `[data-theme="dark"]` in `client/src/styles/tokens.css`. Surface colors smoothly transition from clean white (`#ffffff`) and page slate (`#f8fafc`) to midnight backgrounds (`#0b0f19`) and elevated dark cards (`#111827`).
+- **Contrast & Elevation:** Borders, hover states, status badges (pending amber, approved emerald, active blue, error red), and typography scale dynamically with high-contrast text ratios conforming to WCAG AA guidelines.
+- **Context & Hook (`ThemeContext.jsx`, `useTheme.js`):** Central React context managing theme state with memoized toggling (`light`, `dark`) and document root synchronization (`document.documentElement.setAttribute('data-theme', theme)`).
+- **System Preference Detection & Persistence:** Automatically listens to OS color schemes via `window.matchMedia('(prefers-color-scheme: dark)')` with seamless fallback and saves user choices to `localStorage` (`alumniconnect_theme`).
+- **Interactive Switcher (`<ThemeToggle />`):** Accessible, animated SVG sun/moon switcher embedded seamlessly into the desktop navbar actions bar and mobile header controls for instant 1-tap switching anywhere.
 
 ---
 
@@ -213,11 +225,11 @@ AlumniConnect/
 │   ├── src/
 │   │   ├── assets/                  # Graphics and SVGs
 │   │   ├── components/
-│   │   │   ├── common/              # Button, Card, Input, Select, Textarea, Loading, ErrorAlert, ProtectedRoute
+│   │   │   ├── common/              # Button, Card, Input, Select, Textarea, Loading, ErrorAlert, ThemeToggle, ProtectedRoute
 │   │   │   ├── dashboard/           # StatCard, ActivityFeed
 │   │   │   └── navigation/          # Navbar, Sidebar, Footer, NotificationBell
-│   │   ├── context/                 # AuthContext & AuthProvider session manager
-│   │   ├── hooks/                   # useAuth custom hook
+│   │   ├── context/                 # AuthContext & ThemeContext providers
+│   │   ├── hooks/                   # useAuth, useTheme custom hooks
 │   │   ├── layouts/                 # MainLayout, DashboardLayout, AuthLayout
 │   │   ├── pages/
 │   │   │   ├── admin/               # AdminDashboard.jsx
