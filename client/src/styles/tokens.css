@@ -111,3 +111,61 @@
 
   --radius-xl: 18px;
 }
+
+[data-theme="dark"] {
+  /* Brand Palette */
+  --color-primary: #60a5fa;          /* Accessible Blue for Dark Surfaces */
+  --color-primary-hover: #93c5fd;
+  --color-primary-light: rgba(96, 165, 250, 0.15);
+  --color-primary-border: rgba(96, 165, 250, 0.3);
+
+  --color-accent: #38bdf8;
+  --color-accent-hover: #7dd3fc;
+
+  --color-secondary: #2dd4bf;
+  --color-secondary-light: rgba(45, 212, 191, 0.15);
+
+  /* Status Colors */
+  --color-success: #4ade80;
+  --color-success-bg: rgba(74, 222, 128, 0.12);
+  --color-warning: #fbbf24;
+  --color-warning-bg: rgba(251, 191, 36, 0.12);
+  --color-danger: #f87171;
+  --color-danger-bg: rgba(248, 113, 113, 0.12);
+  --color-info: #38bdf8;
+  --color-info-bg: rgba(56, 189, 248, 0.12);
+
+  /* Neutral Surface Palette */
+  --color-bg-page: #0b0f19;          /* Deep Midnight Background */
+  --color-bg-card: #111827;          /* Rich Card Surface */
+  --color-bg-subtle: #1f2937;        /* Subtle Row / Hover Surface */
+  --color-bg-muted: #374151;         /* Muted Outline Surface */
+
+  /* Border Colors */
+  --color-border: #1f2937;
+  --color-border-hover: #374151;
+  --color-border-focus: #60a5fa;
+
+  /* Typography Colors */
+  --color-text-main: #f9fafb;        /* Slate 50 */
+  --color-text-muted: #9ca3af;       /* Slate 400 */
+  --color-text-subtle: #6b7280;      /* Slate 500 */
+  --color-text-inverse: #0b0f19;
+
+  /* Elevation & Shadows */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+
+  /* Aliases & Component Utilities */
+  --color-surface: var(--color-bg-card);
+  --color-surface-hover: var(--color-bg-subtle);
+  --color-background: var(--color-bg-page);
+  --color-text: var(--color-text-main);
+  --color-text-secondary: var(--color-text-muted);
+  --color-border-dark: var(--color-border-hover);
+  --color-primary-50: var(--color-primary-light);
+  --color-primary-100: var(--color-primary-border);
+  --color-primary-900: var(--color-primary);
+}
